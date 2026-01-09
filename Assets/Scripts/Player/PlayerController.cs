@@ -20,10 +20,12 @@ public class PlayerController : MonoBehaviour
     // Player states
     enum PlayerState { Normal, Knockback }
     PlayerState currentState = PlayerState.Normal;
+    Animator animator;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -47,9 +49,26 @@ public class PlayerController : MonoBehaviour
         switch (currentState)
         {
             case PlayerState.Normal:
+                if (moveInput.x > 0) 
+                {
+                    transform.rotation = Quaternion.Euler(0, 0, 0);
+                    animator.SetBool("isRunning", true);
+                }
+                else if (moveInput.x < 0)
+                {
+                     transform.rotation = Quaternion.Euler(0, 180, 0);
+                     animator.SetBool("isRunning", true);
+                }
+                else
+                {
+                    animator.SetBool("isRunning", false);
+                }
+
+                
                 rb.linearVelocity = new Vector2(moveInput.x * moveSpeed * controlMultiplier, rb.linearVelocity.y);
                 if (isJumping)
                 {
+                    animator.SetTrigger("jump");
                     rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
                     isJumping = false;
                 }
