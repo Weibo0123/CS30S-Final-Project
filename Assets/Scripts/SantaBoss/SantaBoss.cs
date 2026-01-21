@@ -55,6 +55,7 @@ public class SantaBoss : MonoBehaviour
         distanceToPlayer = player.position.x - transform.position.x;
         // Update the punch timer cooldown
         punchTimer = Mathf.Max(0, punchTimer - Time.fixedDeltaTime);
+        HandleStuck();
         // Handle stuck detection
         if (transform.position.y < -4f)
         {
@@ -172,6 +173,6 @@ public class SantaBoss : MonoBehaviour
         rb.linearVelocity = Vector2.zero;
         rb.simulated = false;
         // Teleport boss to player
-        currentState = BossState.TeleportPunching;
+        punch.punch(player, onPunchFinished);
     }
 }
