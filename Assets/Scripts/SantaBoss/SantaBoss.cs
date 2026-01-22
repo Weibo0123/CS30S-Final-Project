@@ -55,7 +55,6 @@ public class SantaBoss : MonoBehaviour
         distanceToPlayer = player.position.x - transform.position.x;
         // Update the punch timer cooldown
         punchTimer = Mathf.Max(0, punchTimer - Time.fixedDeltaTime);
-        HandleStuck();
         // Handle stuck detection
         if (transform.position.y < -4f)
         {
@@ -75,6 +74,7 @@ public class SantaBoss : MonoBehaviour
                 movement.TryJump(player);
                 TrySwitchToLeap(dy);
                 TrySwitchToPunching();
+                HandleStuck();
                 break;
 
             case BossState.Leaping:
@@ -84,11 +84,13 @@ public class SantaBoss : MonoBehaviour
                         leapStarted = true;
                         leap.leap(player);
                     }
+                HandleStuck();
                 break;
 
             case BossState.TeleportPunching:
             // Attempt to punch the player
                 punch.TryPunch(player, onPunchFinished);
+                HandleStuck();
                 break;
         }
     }

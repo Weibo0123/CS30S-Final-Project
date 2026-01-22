@@ -25374,6 +25374,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1743011794}
     - target: {fileID: 3696422394389238294, guid: 218588e0932414e4188239283e5b75f2, type: 3}
+      propertyPath: stuckTimeLimit
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3696422394389238294, guid: 218588e0932414e4188239283e5b75f2, type: 3}
       propertyPath: minMoveThreshold
       value: 0.2
       objectReference: {fileID: 0}
