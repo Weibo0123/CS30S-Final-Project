@@ -45,7 +45,7 @@ public class PlayerHealth : MonoBehaviour
         isInvincible = false;
     }
 
-    void Die()
+    public void Die()
     {
         // Handle player death (e.g., reload scene, show game over screen)
         Debug.Log("Player Died");
