@@ -27460,6 +27460,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -6447722072507503168, guid: 10f3cacccb0c4c547be76836eba20664, type: 3}
+    - target: {fileID: 806223638689016176, guid: 4367e10d050c844babf25c76f2beef26, type: 3}
+      propertyPath: sceneName
+      value: You Lose
+      objectReference: {fileID: 0}
+    - target: {fileID: 806223638689016176, guid: 4367e10d050c844babf25c76f2beef26, type: 3}
+      propertyPath: sceneAsset
+      value: 
+      objectReference: {fileID: 102900000, guid: f5f100d9239aaef42bd01178d42d2bbb, type: 3}
     - target: {fileID: 3114224517417956670, guid: 4367e10d050c844babf25c76f2beef26, type: 3}
       propertyPath: jumpForce
       value: 12

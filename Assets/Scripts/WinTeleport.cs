@@ -19,24 +19,16 @@ public class WinTeleport : MonoBehaviour
     }
     bool teleport = false;
 
-    void Update()
-    {
-        // Check if Space is pressed
-        if (teleport)
-        {
-            if (!string.IsNullOrEmpty(sceneName))
-            {
-                SceneManager.LoadScene(sceneName); // Load the specific scene
-            }
-            else
-            {
-                Debug.LogWarning("Scene not assigned in the Inspector!");
-            }
-        }
-    }
 
-    void OiggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        teleport = true;
+        if (!string.IsNullOrEmpty(sceneName))
+        {
+            SceneManager.LoadScene(sceneName); // Load the specific scene
+        }
+        else
+        {
+            Debug.LogWarning("Scene not assigned in the Inspector!");
+        }
     }
 }
