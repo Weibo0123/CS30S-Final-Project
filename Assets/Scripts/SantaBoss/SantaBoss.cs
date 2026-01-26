@@ -56,7 +56,7 @@ public class SantaBoss : MonoBehaviour
         // Update the punch timer cooldown
         punchTimer = Mathf.Max(0, punchTimer - Time.fixedDeltaTime);
         // Handle stuck detection
-        if (transform.position.y < -7f)
+        if (transform.position.y < -10f)
         {
             // Use punch if boss falls off the map
             HandleException();

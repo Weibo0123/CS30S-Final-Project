@@ -150,6 +150,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d893dcfbaf32e4b729cdb477781c1cf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BossDamage
-  damageAmount: 1
+  damageAmount: 10
   knockbackForceX: 0
   knockbackForceY: 10
